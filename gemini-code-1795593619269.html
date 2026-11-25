@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>윤서하 | 데이터 기반 에너지 비즈니스 분석가 포트폴리오</title>
+  <style>
+    :root {
+      --bg-cream: #FBF8F1;
+      --bg-cream-deep: #F3EDE0;
+      --surface-card: #FFFFFF;
+      --green-dark: #1B4332;
+      --green-mid: #2D6A4F;
+      --green-soft: #D8F3DC;
+      --accent-amber: #D97706;
+      --text-main: #1F2923;
+      --text-muted: #526158;
+      --border-light: #DFD8C8;
+      --shadow-sm: 0 4px 14px rgba(27, 67, 50, 0.06);
+      --shadow-md: 0 12px 30px rgba(27, 67, 50, 0.10);
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* 상단 안내 배너 */
+    .disclaimer-banner {
+      background-color: var(--green-dark);
+      color: var(--bg-cream);
+      text-align: center;
+      font-size: 0.84rem;
+      padding: 8px 16px;
+      letter-spacing: -0.01em;
+    }
+
+    /* 내비게이션 바 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(251, 248, 241, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--green-mid);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green-mid);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 1.2rem;
+      color: var(--green-dark);
+      cursor: pointer;
+    }
+
+    /* 공통 섹션 스타일 */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background-color: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 36px;
+      max-width: 640px;
+    }
+
+    /* 히어로 (소개) 섹션 */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      padding-top: 64px;
+      padding-bottom: 84px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .target-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-cream-deep);
+      border: 1px solid var(--border-light);
+      color: var(--green-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 2.55rem;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title span {
+      color: var(--green-mid);
+      text-decoration: underline;
+      text-decoration-color: rgba(45, 106, 79, 0.3);
+      text-underline-offset: 6px;
+    }
+
+    .hero-summary {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      word-break: keep-all;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .meta-chip {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border-light);
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--green-dark);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-mid);
+    }
+
+    .btn-outline {
+      background-color: var(--surface-card);
+      color: var(--green-dark);
+      border: 1.5px solid var(--green-dark);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg-cream-deep);
+    }
+
+    /* 데이터 작업실 일러스트 영역 */
+    .hero-visual-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      perspective: 1000px;
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .scene-motion {
+      width: 100%;
+      max-width: 420px;
+      will-change: transform;
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+
+    .studio-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 28px rgba(27, 67, 50, 0.12));
+    }
+
+    .scene-caption-box {
+      margin-top: 14px;
+      background-color: var(--bg-cream-deep);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .scene-caption-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    .scene-caption-text strong {
+      color: var(--green-dark);
+    }
+
+    .motion-control-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed var(--border-light);
+      padding-top: 8px;
+    }
+
+    .motion-status {
+      font-size: 0.78rem;
+      color: var(--green-mid);
+      font-weight: 600;
+    }
+
+    .motion-toggle-btn {
+      background-color: var(--surface-card);
+      border: 1px solid var(--green-dark);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .motion-toggle-btn:hover {
+      background-color: var(--green-dark);
+      color: #FFFFFF;
+    }
+
+    /* 프로젝트 그리드 */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-category {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+
+    .project-excerpt {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      word-break: keep-all;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+
+    .tag {
+      background-color: var(--bg-cream-deep);
+      color: var(--green-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .detail-btn {
+      width: 100%;
+      background-color: var(--green-soft);
+      color: var(--green-dark);
+      border: none;
+      padding: 11px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .detail-btn:hover {
+      background-color: var(--green-dark);
+      color: #FFFFFF;
+    }
+
+    /* 역량 (Skills) */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .skill-box {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-box h3 {
+      font-size: 1.12rem;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--green-soft);
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-list li {
+      font-size: 0.93rem;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-level {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      background-color: var(--bg-cream);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+    }
+
+    /* 활동 기록 (Timeline) */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      background-color: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-left: 5px solid var(--green-dark);
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .timeline-period {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--green-mid);
+      background-color: var(--green-soft);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .timeline-role {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      word-break: keep-all;
+    }
+
+    /* 연락처 */
+    .contact-card {
+      background-color: var(--green-dark);
+      color: var(--bg-cream);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .contact-info h2 {
+      font-size: 1.75rem;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .contact-info p {
+      color: #D8F3DC;
+      font-size: 0.98rem;
+      max-width: 520px;
+      word-break: keep-all;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .email-box {
+      background-color: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(216, 243, 220, 0.35);
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-align: center;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+    }
+
+    .copy-btn {
+      background-color: var(--bg-cream);
+      color: var(--green-dark);
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: var(--green-soft);
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 24px 48px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* 상세 보기 모달 */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(20, 40, 30, 0.58);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 200;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background-color: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      max-width: 640px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: var(--bg-cream-deep);
+      border: 1px solid var(--border-light);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      cursor: pointer;
+    }
+
+    .modal-tag {
+      display: inline-block;
+      background-color: var(--green-soft);
+      color: var(--green-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 18px;
+      padding-right: 32px;
+    }
+
+    .modal-section {
+      margin-bottom: 18px;
+    }
+
+    .modal-section h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--green-mid);
+      margin-bottom: 6px;
+    }
+
+    .modal-section p,
+    .modal-section ul {
+      font-size: 0.94rem;
+      color: var(--text-main);
+      word-break: keep-all;
+    }
+
+    .modal-section ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* 반응형 (태블릿 및 모바일) */
+    @media (max-width: 900px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-top: 40px;
+        padding-bottom: 56px;
+      }
+
+      .hero-visual-wrapper {
+        width: 100%;
+        overflow: hidden;
+        padding: 12px 0;
+      }
+
+      .scene-motion {
+        max-width: 340px;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-cream);
+        border-bottom: 1px solid var(--border-light);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 14px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-title {
+        font-size: 1.95rem;
+      }
+
+      .contact-card {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 가상 이력 고지 배너 -->
+  <div class="disclaimer-banner" role="note">
+    안내: 본 페이지에 기재된 인물(윤서하), 학교, 기업, 프로젝트 및 모든 활동 이력은 포트폴리오 예시를 위해 구성된 가상의 내용입니다.
+  </div>
+
+  <!-- 상단 내비게이션 -->
+  <header>
+    <nav class="nav-container" aria-label="주요 메뉴">
+      <a href="#about" class="logo">
+        <span class="logo-dot"></span>
+        윤서하 Portfolio
+      </a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="메뉴 열기">
+        ☰
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#skills">역량</a></li>
+        <li><a href="#activities">활동 기록</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. 소개 (Hero) 섹션 -->
+    <section id="about" class="hero-section">
+      <div class="hero-content">
+        <div class="target-badge">
+          지원 목표 · 모아빛에너지 데이터·비즈니스 분석 직무
+        </div>
+        <h1 class="hero-title">
+          데이터의 흐름 속에서<br />
+          <span>지속 가능한 에너지 가치</span>를<br />
+          설계하는 윤서하입니다.
+        </h1>
+        <p class="hero-summary">
+          솔담대학교 경영정보학과에서 비즈니스 프로세스와 데이터 분석을 전공하며, 복잡한 운영 데이터를 의사결정 지표로 전환하는 역량을 길렀습니다. 여울데이터랩 인턴십과 별숲 데이터 챌린지 경험을 바탕으로 모아빛에너지의 분산형 에너지 및 수요 예측 고도화에 기여하고자 합니다.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-chip">솔담대학교 경영정보학과 (졸업예정)</div>
+          <div class="meta-chip">여울데이터랩 데이터분석 인턴</div>
+          <div class="meta-chip">별숲 데이터 챌린지 우수상</div>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">주요 프로젝트 보기</a>
+          <a href="#contact" class="btn btn-outline">이메일 문의하기</a>
+        </div>
+      </div>
+
+      <!-- 데이터 작업실 인라인 SVG 일러스트 (.scene-motion) -->
+      <div class="hero-visual-wrapper">
+        <div class="scene-motion" id="sceneMotion" aria-hidden="true">
+          <svg class="studio-svg" viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- 배경 원형 그라데이션 -->
+              <radialGradient id="bgAura" cx="50%" cy="45%" r="50%">
+                <stop offset="0%" stop-color="#E6F4EA" />
+                <stop offset="70%" stop-color="#F2ECE0" />
+                <stop offset="100%" stop-color="#FBF8F1" stop-opacity="0" />
+              </radialGradient>
+              <!-- 나무 책상 그라데이션 -->
+              <linearGradient id="deskTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#D7A876" />
+                <stop offset="100%" stop-color="#B9834E" />
+              </linearGradient>
+              <linearGradient id="deskFrontGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#9E6B3B" />
+                <stop offset="100%" stop-color="#7C5129" />
+              </linearGradient>
+              <!-- 모니터 화면 그라데이션 -->
+              <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#1B4332" />
+                <stop offset="100%" stop-color="#2D6A4F" />
+              </linearGradient>
+              <!-- 캐릭터 입체 음영 -->
+              <radialGradient id="charBodyGrad" cx="40%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="75%" stop-color="#F3EDE0" />
+                <stop offset="100%" stop-color="#DCD3C0" />
+              </radialGradient>
+              <!-- 부드러운 그림자 필터 -->
+              <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1B4332" flood-opacity="0.14" />
+              </filter>
+            </defs>
+
+            <!-- 배경 은은한 오라 -->
+            <circle cx="230" cy="195" r="175" fill="url(#bgAura)" />
+
+            <!-- 창문/차트 장식 카드 (배경 레이어) -->
+            <g filter="url(#softShadow)">
+              <rect x="64" y="54" width="92" height="62" rx="12" fill="#FFFFFF" stroke="#DFD8C8" stroke-width="1.5" />
+              <circle cx="80" cy="70" r="4" fill="#D97706" />
+              <circle cx="92" cy="70" r="4" fill="#2D6A4F" />
+              <path d="M78 102 L96 88 L114 94 L138 74" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="138" cy="74" r="4" fill="#D97706" />
+            </g>
+
+            <!-- 에너지 잎사귀 배지 (우측 상단) -->
+            <g filter="url(#softShadow)">
+              <rect x="316" y="64" width="76" height="52" rx="12" fill="#1B4332" />
+              <path d="M342 98 C342 82, 362 76, 368 76 C368 92, 358 102, 342 98 Z" fill="#95D5B2" />
+              <path d="M342 98 L358 84" stroke="#1B4332" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- 둥근 캐릭터 (책상 뒤 상반신) -->
+            <g filter="url(#softShadow)">
+              <!-- 몸통 (짙은 초록 스웨터) -->
+              <path d="M180 245 C180 205, 280 205, 280 245 Z" fill="#2D6A4F" />
+              <!-- 둥근 머리 -->
+              <circle cx="230" cy="176" r="44" fill="url(#charBodyGrad)" stroke="#E2D9C8" stroke-width="1.5" />
+              <!-- 귀/헤드셋 포인트 -->
+              <rect x="181" y="166" width="10" height="22" rx="5" fill="#1B4332" />
+              <rect x="269" y="166" width="10" height="22" rx="5" fill="#1B4332" />
+              <path d="M186 168 C186 124, 274 124, 274 168" fill="none" stroke="#1B4332" stroke-width="4.5" stroke-linecap="round" />
+              <!-- 표정 (눈과 미소) -->
+              <circle cx="216" cy="175" r="3.8" fill="#1B4332" />
+              <circle cx="244" cy="175" r="3.8" fill="#1B4332" />
+              <ellipse cx="208" cy="183" rx="5" ry="3" fill="#F4A261" opacity="0.45" />
+              <ellipse cx="252" cy="183" rx="5" ry="3" fill="#F4A261" opacity="0.45" />
+              <path d="M224 185 Q230 191 236 185" fill="none" stroke="#1B4332" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+
+            <!-- 듀얼 모니터 (좌측 메인 모니터 + 우측 서브 모니터) -->
+            <g filter="url(#softShadow)">
+              <!-- 좌측 모니터 스탠드 -->
+              <rect x="132" y="218" width="16" height="26" rx="3" fill="#4A5550" />
+              <rect x="116" y="240" width="48" height="7" rx="3.5" fill="#2F3A35" />
+              <!-- 좌측 모니터 베젤 & 화면 -->
+              <rect x="76" y="136" width="124" height="86" rx="10" fill="#232D28" />
+              <rect x="82" y="142" width="112" height="72" rx="6" fill="url(#screenGrad)" />
+              <!-- 좌측 화면 데이터 막대 차트 -->
+              <rect x="96" y="182" width="12" height="22" rx="3" fill="#74C69D" />
+              <rect x="114" y="168" width="12" height="36" rx="3" fill="#95D5B2" />
+              <rect x="132" y="158" width="12" height="46" rx="3" fill="#D8F3DC" />
+              <rect x="150" y="174" width="12" height="30" rx="3" fill="#52B788" />
+              <rect x="168" y="152" width="12" height="52" rx="3" fill="#FBBF24" />
+            </g>
+
+            <g filter="url(#softShadow)">
+              <!-- 우측 모니터 스탠드 -->
+              <rect x="312" y="222" width="14" height="22" rx="3" fill="#4A5550" />
+              <rect x="298" y="240" width="42" height="7" rx="3.5" fill="#2F3A35" />
+              <!-- 우측 모니터 베젤 & 화면 -->
+              <rect x="266" y="146" width="112" height="80" rx="10" fill="#232D28" />
+              <rect x="272" y="152" width="100" height="66" rx="6" fill="url(#screenGrad)" />
+              <!-- 우측 화면 도넛 차트 & 지표선 -->
+              <circle cx="304" cy="185" r="16" fill="none" stroke="#52B788" stroke-width="6" />
+              <path d="M304 169 A16 16 0 0 1 320 185" fill="none" stroke="#FBBF24" stroke-width="6" stroke-linecap="round" />
+              <rect x="330" y="170" width="30" height="5" rx="2.5" fill="#D8F3DC" />
+              <rect x="330" y="181" width="22" height="5" rx="2.5" fill="#95D5B2" />
+              <rect x="330" y="192" width="26" height="5" rx="2.5" fill="#74C69D" />
+            </g>
+
+            <!-- 나무 책상 -->
+            <g filter="url(#softShadow)">
+              <!-- 책상 다리 -->
+              <rect x="68" y="264" width="18" height="88" rx="6" fill="#7C5129" />
+              <rect x="374" y="264" width="18" height="88" rx="6" fill="#7C5129" />
+              <!-- 책상 상판 & 앞면 두께 -->
+              <rect x="42" y="244" width="376" height="16" rx="8" fill="url(#deskTopGrad)" />
+              <rect x="46" y="256" width="368" height="14" rx="5" fill="url(#deskFrontGrad)" />
+            </g>
+
+            <!-- 책상 위 소품 1: 화분과 식물 (좌측) -->
+            <g filter="url(#softShadow)">
+              <!-- 잎사귀 -->
+              <path d="M84 214 C70 198, 72 180, 86 184 C92 194, 90 206, 84 214 Z" fill="#2D6A4F" />
+              <path d="M88 214 C102 194, 114 184, 102 174 C90 180, 86 198, 88 214 Z" fill="#40916C" />
+              <path d="M86 214 C82 192, 92 172, 96 172 C98 186, 92 202, 86 214 Z" fill="#52B788" />
+              <!-- 테라코타 화분 -->
+              <polygon points="72,214 102,214 97,244 77,244" fill="#C86D51" />
+              <rect x="69" y="210" width="36" height="6" rx="3" fill="#D97E62" />
+            </g>
+
+            <!-- 책상 위 소품 2: 키보드 패드 (중앙) -->
+            <rect x="182" y="247" width="96" height="6" rx="3" fill="#F3EDE0" opacity="0.9" />
+
+            <!-- 책상 위 소품 3: 머그컵과 따뜻한 김 (우측) -->
+            <g filter="url(#softShadow)">
+              <!-- 머그 손잡이 -->
+              <path d="M376 221 C387 221, 387 237, 376 237" fill="none" stroke="#FBF8F1" stroke-width="4.5" stroke-linecap="round" />
+              <!-- 머그 몸통 -->
+              <rect x="352" y="215" width="26" height="29" rx="5" fill="#FBF8F1" stroke="#DFD8C8" stroke-width="1.2" />
+              <rect x="356" y="224" width="18" height="8" rx="2" fill="#2D6A4F" />
+              <!-- 은은한 커피 김 -->
+              <path d="M360 208 Q357 201 361 195" fill="none" stroke="#95D5B2" stroke-width="2" stroke-linecap="round" />
+              <path d="M369 208 Q372 201 368 195" fill="none" stroke="#95D5B2" stroke-width="2" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- 그림 의미 설명 및 모션 제어 UI -->
+        <div class="scene-caption-box">
+          <p class="scene-caption-text">
+            <strong>데이터 작업실 일러스트 의미:</strong> 듀얼 모니터의 에너지 수요·효율 지표와 둥근 분석가 캐릭터, 초록 식물과 따뜻한 머그컵은 <em>‘데이터의 정밀함과 지속 가능한 친환경 에너지 가치의 조화’</em>를 상징합니다.
+          </p>
+          <div class="motion-control-row">
+            <span class="motion-status" id="motionStatus">모션 활성 (부유 · 시선 추적 · 스크롤 연동)</span>
+            <button type="button" class="motion-toggle-btn" id="motionToggleBtn">움직임 멈춤</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 프로젝트 3개 섹션 -->
+    <section id="projects">
+      <span class="section-tag">PROJECTS</span>
+      <h2 class="section-title">데이터로 해결한 비즈니스 프로젝트</h2>
+      <p class="section-desc">
+        전력 수요 예측부터 탄소 배출량 시각화, 고객 이탈 방지 모델링까지 실제 비즈니스 의사결정에 연결되는 분석 결과를 도출했습니다.
+      </p>
+
+      <div class="projects-grid">
+        <!-- 프로젝트 1 -->
+        <article class="project-card">
+          <div>
+            <div class="project-category">별숲 데이터 챌린지 · 우수상</div>
+            <h3 class="project-title">기상·시간대별 분산형 태양광 발전량 예측 및 ESS 충·방전 스케줄링</h3>
+            <p class="project-excerpt">
+              기상청 일사량·기온 데이터와 지역별 전력 부하 패턴을 결합해 발전량 오차율을 14.2% 개선하고 최적의 에너지저장장치(ESS) 운영안을 제안했습니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">LightGBM</span>
+              <span class="tag">시계열 분석</span>
+              <span class="tag">에너지 최적화</span>
+            </div>
+          </div>
+          <button type="button" class="detail-btn" data-project="0">상세 보기</button>
+        </article>
+
+        <!-- 프로젝트 2 -->
+        <article class="project-card">
+          <div>
+            <div class="project-category">여울데이터랩 인턴십 프로젝트</div>
+            <h3 class="project-title">중소 제조사업장 전력 피크 감축을 위한 설비 가동 패턴 이상 탐지 대시보드</h3>
+            <p class="project-excerpt">
+              15분 단위 스마트미터(AMI) 데이터를 SQL로 정제하고 비정상 대기전력 구간을 자동 탐지하는 BI 대시보드를 구축해 기본요금 절감 근거를 마련했습니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">SQL</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">이상 탐지</span>
+              <span class="tag">AMI 데이터</span>
+            </div>
+          </div>
+          <button type="button" class="detail-btn" data-project="1">상세 보기</button>
+        </article>
+
+        <!-- 프로젝트 3 -->
+        <article class="project-card">
+          <div>
+            <div class="project-category">솔담대학교 경영정보학과 캡스톤</div>
+            <h3 class="project-title">RE100 이행 기업을 위한 재생에너지 조달 포트폴리오 시뮬레이터</h3>
+            <p class="project-excerpt">
+              PPA(전력구매계약)와 REC(신재생에너지 공급인증서) 가격 변동 시나리오를 비교하여 기업 규모별 최적 조달 비율을 산출하는 의사결정 모델을 설계했습니다.
+            </p>
+            <div class="tag-list">
+              <span class="tag">R / Python</span>
+              <span class="tag">몬테카를로 시뮬레이션</span>
+              <span class="tag">RE100 전략</span>
+            </div>
+          </div>
+          <button type="button" class="detail-btn" data-project="2">상세 보기</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 역량 섹션 -->
+    <section id="skills">
+      <span class="section-tag">CAPABILITIES</span>
+      <h2 class="section-title">핵심 보유 역량</h2>
+      <p class="section-desc">
+        데이터 추출·전처리부터 통계적 모델링, 현업 이해관계자를 설득하는 시각화 커뮤니케이션까지 균형 있게 갖추고 있습니다.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>데이터 분석 & 모델링</h3>
+          <ul class="skill-list">
+            <li><span>Python (Pandas, Scikit-learn)</span><span class="skill-level">실무 활용</span></li>
+            <li><span>SQL (복합 쿼리 · 윈도우 함수)</span><span class="skill-level">실무 활용</span></li>
+            <li><span>시계열 예측 및 회귀·분류 모델</span><span class="skill-level">프로젝트 적용</span></li>
+            <li><span>A/B 테스트 및 가설 검정</span><span class="skill-level">학부 심화</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>BI 시각화 & 데이터 엔지니어링</h3>
+          <ul class="skill-list">
+            <li><span>Tableau / Power BI 대시보드</span><span class="skill-level">실무 활용</span></li>
+            <li><span>ETL 파이프라인 기초 설계</span><span class="skill-level">인턴 경험</span></li>
+            <li><span>Excel 고급 피벗 및 재무 모델링</span><span class="skill-level">능숙</span></li>
+            <li><span>Git / GitHub 버전 관리</span><span class="skill-level">협업 활용</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>비즈니스 & 에너지 도메인</h3>
+          <ul class="skill-list">
+            <li><span>전력시장(KPX) · REC · PPA 구조 이해</span><span class="skill-level">도메인 연구</span></li>
+            <li><span>경영정보시스템(MIS) 프로세스 분석</span><span class="skill-level">전공 핵심</span></li>
+            <li><span>KPI 정의 및 성과 리포팅</span><span class="skill-level">인턴 경험</span></li>
+            <li><span>비전공자 대상 데이터 스토리텔링</span><span class="skill-level">강점</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 활동 기록 섹션 -->
+    <section id="activities">
+      <span class="section-tag">EXPERIENCE & ACTIVITIES</span>
+      <h2 class="section-title">학업 및 대외 활동 기록</h2>
+      <p class="section-desc">
+        이론에 머무르지 않고 실제 데이터 환경에서 문제를 정의하고 동료들과 협업하며 성장한 발자취입니다.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="timeline-title">여울데이터랩 (Yeoul Data Lab)</h3>
+            <span class="timeline-period">2026.03 – 2026.08</span>
+          </div>
+          <div class="timeline-role">비즈니스 데이터 분석팀 인턴</div>
+          <p class="timeline-desc">
+            에너지·제조 고객사의 시계열 센서 로그 정제 자동화 스크립트를 작성하여 주간 리포트 산출 시간을 65% 단축했습니다. 또한 고객사 담당자 미팅에 참여해 핵심 KPI 지표를 도출하고 시각화 대시보드 개선안을 반영했습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="timeline-title">별숲 데이터 챌린지 (Byeolsup Data Challenge)</h3>
+            <span class="timeline-period">2025.10 – 2025.11</span>
+          </div>
+          <div class="timeline-role">팀장 · 데이터 모델링 및 전략 기획 (우수상 수상)</div>
+          <p class="timeline-desc">
+            4인 팀을 이끌며 공공 기상 데이터와 지역 전력 수요 데이터를 결합한 신재생에너지 발전량 예측 모델을 개발했습니다. 예측 불확실성을 반영한 ESS 충·방전 경제성 분석을 함께 제시해 심사위원단으로부터 실용성을 높이 평가받았습니다.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3 class="timeline-title">솔담대학교 경영정보학과 데이터 분석 학회 ‘인사이트트리’</h3>
+            <span class="timeline-period">2024.09 – 2026.02</span>
+          </div>
+          <div class="timeline-role">학술부장 및 정기 세미나 멘토</div>
+          <p class="timeline-desc">
+            매주 SQL 및 Python 데이터 전처리 세션을 운영하고, 교내 에너지 절감 캠페인 데이터 분석 프로젝트를 주도해 캠퍼스 피크 시간대 전력 사용량 8.4% 감소에 기여했습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 연락처 섹션 -->
+    <section id="contact">
+      <div class="contact-card">
+        <div class="contact-info">
+          <h2>모아빛에너지와 함께 내일의 에너지를 설계하고 싶습니다.</h2>
+          <p>
+            데이터를 통해 비즈니스 병목을 해결하고 지속 가능한 성장을 만드는 일에 언제든 열려 있습니다. 포트폴리오와 프로젝트에 대해 궁금한 점이 있으시면 편하게 연락해 주세요.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <div class="email-box" id="emailText">seoha@example.com</div>
+          <button type="button" class="copy-btn" id="copyEmailBtn">이메일 주소 복사하기</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 윤서하 (솔담대학교 경영정보학과) · 본 포트폴리오의 모든 인물·기관·경력은 가상의 설정입니다.</p>
+  </footer>
+
+  <!-- 프로젝트 상세 보기 모달 -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="닫기">✕</button>
+      <span class="modal-tag" id="modalTag">카테고리</span>
+      <h3 class="modal-title" id="modalTitle">프로젝트 제목</h3>
+
+      <div class="modal-section">
+        <h4>1. 배경 및 문제 정의</h4>
+        <p id="modalProblem"></p>
+      </div>
+      <div class="modal-section">
+        <h4>2. 데이터 분석 및 해결 과정</h4>
+        <ul id="modalProcess"></ul>
+      </div>
+      <div class="modal-section">
+        <h4>3. 주요 성과 및 비즈니스 인사이트</h4>
+        <p id="modalResult"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. 모바일 메뉴 토글
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // 2. 프로젝트 상세 보기 모달 데이터 및 제어
+    const projectDetails = [
+      {
+        tag: '별숲 데이터 챌린지 · 우수상',
+        title: '기상·시간대별 분산형 태양광 발전량 예측 및 ESS 충·방전 스케줄링',
+        problem: '소규모 분산형 태양광 발전소는 구름양과 기온 변화에 따라 출력 변동성이 커서 계통 안정성과 전력 거래 수익 예측이 어렵다는 문제가 있었습니다.',
+        process: [
+          '최근 3년간 시간별 기상청 관측 데이터(일사량, 운량, 습도, 풍속)와 발전소 출력 데이터를 병합 및 결측치 보간 처리',
+          '계절성 및 시간대별 태양 고도 파생변수를 생성해 LightGBM 기반 24시간 단기 발전량 예측 모델 구축',
+          '예측 발전량과 시간대별 전력도매가격(SMP)을 연계한 ESS 최적 충·방전 스케줄링 알고리즘 설계'
+        ],
+        result: '기존 단순 이동평균 예측 대비 평균절대비율오차(MAPE)를 14.2% 낮췄으며, 시뮬레이션 기준 ESS 연계 수익성을 약 11.8% 개선하는 운영 전략을 도출했습니다.'
+      },
+      {
+        tag: '여울데이터랩 인턴십 프로젝트',
+        title: '중소 제조사업장 전력 피크 감축을 위한 설비 가동 패턴 이상 탐지 대시보드',
+        problem: '중소 제조 고객사들이 비가동 시간대의 불필요한 대기전력과 순간 피크 전력으로 인해 높은 전력 기본요금을 부담하고 있었으나 실시간 파악 수단이 부족했습니다.',
+        process: [
+          '15분 단위 스마트미터(AMI) 원시 로그 1,200만 건을 SQL 윈도우 함수로 집계하여 요일·교대조별 기준 부하 프로파일 생성',
+          '표준편차 기반 임계치와 사분위수(IQR) 로직을 결합해 야간·주말 이상 전력 소비 구간 자동 라벨링',
+          '현장 관리자가 직관적으로 피크 경고와 설비별 소비 추이를 확인할 수 있는 Tableau 인터랙티브 대시보드 제작'
+        ],
+        result: '시범 적용 2개 사업장에서 비가동 시간대 누수 전력의 22%를 식별하여 조치했으며, 피크 전력 관리를 통해 연간 기본요금 약 9.5% 절감 가능성을 입증했습니다.'
+      },
+      {
+        tag: '솔담대학교 경영정보학과 캡스톤',
+        title: 'RE100 이행 기업을 위한 재생에너지 조달 포트폴리오 시뮬레이터',
+        problem: '국내 수출 제조기업들이 RE100 달성을 위해 직접 PPA, 제3자 PPA, REC 현물 구매 중 어떤 비중으로 조달해야 비용 변동 위험을 최소화할 수 있는지 판단하기 어려웠습니다.',
+        process: [
+          '과거 5년간 REC 현물가격 추이와 한전 산업용 전기요금 인상률을 반영한 확률적 가격 시나리오 생성',
+          '기업의 연간 전력 사용량, 목표 이행률, 예산 상한을 입력하면 1,000회 몬테카를로 시뮬레이션을 수행하는 분석 모듈 구현',
+          '기대 조달 비용과 최악 시나리오 리스크(VaR)를 동시에 비교하는 의사결정 매트릭스 도출'
+        ],
+        result: '단일 조달 방식 대비 PPA 60% + REC 40% 혼합 포트폴리오가 10년 누적 비용 변동성을 31% 완화한다는 분석 결과를 도출하여 학과 최우수 캡스톤 발표로 선정되었습니다.'
+      }
+    ];
+
+    const projectModal = document.getElementById('projectModal');
+    const modalTag = document.getElementById('modalTag');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalProblem = document.getElementById('modalProblem');
+    const modalProcess = document.getElementById('modalProcess');
+    const modalResult = document.getElementById('modalResult');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    document.querySelectorAll('.detail-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.getAttribute('data-project'));
+        const item = projectDetails[idx];
+        if (!item) return;
+
+        modalTag.textContent = item.tag;
+        modalTitle.textContent = item.title;
+        modalProblem.textContent = item.problem;
+        modalProcess.innerHTML = item.process.map(step => `<li>${step}</li>`).join('');
+        modalResult.textContent = item.result;
+
+        projectModal.classList.add('open');
+        modalCloseBtn.focus();
+      });
+    });
+
+    function closeModal() {
+      projectModal.classList.remove('open');
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    projectModal.addEventListener('click', (e) => {
+      if (e.target === projectModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && projectModal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+
+    // 3. 이메일 복사 기능
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const emailText = document.getElementById('emailText').textContent.trim();
+
+    copyEmailBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(emailText);
+        const original = copyEmailBtn.textContent;
+        copyEmailBtn.textContent = '복사 완료! (seoha@example.com)';
+        setTimeout(() => {
+          copyEmailBtn.textContent = original;
+        }, 2200);
+      } catch (err) {
+        alert('이메일 주소: ' + emailText);
+      }
+    });
+
+    // 4. .scene-motion 작업실 일러스트 부드러운 인터랙션 애니메이션
+    (function initSceneMotion() {
+      const sceneEl = document.getElementById('sceneMotion');
+      const toggleBtn = document.getElementById('motionToggleBtn');
+      const statusText = document.getElementById('motionStatus');
+
+      if (!sceneEl) return;
+
+      // OS의 동작 줄이기(prefers-reduced-motion) 설정 감지
+      const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let isUserPaused = false;
+      let isSystemReduced = reducedMotionQuery.matches;
+      let rafId = null;
+
+      // 마우스 목표값과 현재 보간값 (부드러운 감쇠용)
+      let targetMouseX = 0;
+      let targetMouseY = 0;
+      let currentMouseX = 0;
+      let currentMouseY = 0;
+
+      // 터치/모바일 기기 판별 (coarse pointer 또는 터치 전용 뷰포트)
+      const isTouchDevice = () => {
+        return window.matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window && window.innerWidth <= 900);
+      };
+
+      // PC 마우스 추적 이벤트
+      window.addEventListener('mousemove', (e) => {
+        if (isTouchDevice() || isUserPaused || isSystemReduced) return;
+        const normX = (e.clientX / window.innerWidth) * 2 - 1;  // -1 ~ 1
+        const normY = (e.clientY / window.innerHeight) * 2 - 1; // -1 ~ 1
+        targetMouseX = normX;
+        targetMouseY = normY;
+      }, { passive: true });
+
+      window.addEventListener('mouseleave', () => {
+        targetMouseX = 0;
+        targetMouseY = 0;
+      });
+
+      // 스크롤에 따른 위쪽 이동 계산 (최대 50px)
+      function getScrollOffsetY() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const maxScroll = 600;
+        const ratio = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+        return -ratio * 50; // 위로 최대 50px 이동
+      }
+
+      function updateUIState() {
+        if (isSystemReduced) {
+          statusText.textContent = '모션 정지 (시스템 동작 줄이기 설정 적용됨)';
+          toggleBtn.textContent = '움직임 재생';
+        } else if (isUserPaused) {
+          statusText.textContent = '모션 일시정지됨';
+          toggleBtn.textContent = '움직임 재생';
+        } else {
+          statusText.textContent = isTouchDevice()
+            ? '모션 활성 (부유 · 스크롤 연동)'
+            : '모션 활성 (부유 · 시선 추적 · 스크롤 연동)';
+          toggleBtn.textContent = '움직임 멈춤';
+        }
+      }
+
+      function resetTransform() {
+        sceneEl.style.transform = 'translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg)';
+      }
+
+      function animate(timestamp) {
+        if (isUserPaused || isSystemReduced || document.hidden) {
+          rafId = null;
+          return;
+        }
+
+        // 1) 약 7초(7000ms) 주기로 위아래 약 10px(±5px 또는 10px 진폭) 천천히 부유
+        const period = 7000;
+        const floatY = Math.sin((timestamp / period) * Math.PI * 2) * 10;
+
+        // 2) 스크롤에 따른 위로 최대 50px 이동
+        const scrollOffsetY = getScrollOffsetY();
+
+        // 3) PC 마우스 추적 및 기울기 제한 (최대 30도)
+        let moveX = 0;
+        let moveY = 0;
+        let rotateX = 0;
+        let rotateY = 0;
+
+        if (!isTouchDevice()) {
+          currentMouseX += (targetMouseX - currentMouseX) * 0.08;
+          currentMouseY += (targetMouseY - currentMouseY) * 0.08;
+
+          moveX = currentMouseX * 14; // 좌우 최대 14px 이동
+          moveY = currentMouseY * 10; // 상하 최대 10px 이동
+
+          // 기울기 최대 30도 이내로 안전하게 제한
+          const maxTilt = 30;
+          rotateY = Math.max(-maxTilt, Math.min(maxTilt, currentMouseX * 16));
+          rotateX = Math.max(-maxTilt, Math.min(maxTilt, -currentMouseY * 16));
+        } else {
+          currentMouseX = 0;
+          currentMouseY = 0;
+        }
+
+        const totalY = floatY + scrollOffsetY + moveY;
+
+        sceneEl.style.transform =
+          `translate3d(${moveX.toFixed(2)}px, ${totalY.toFixed(2)}px, 0px) ` +
+          `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+        rafId = requestAnimationFrame(animate);
+      }
+
+      function startAnimation() {
+        if (!rafId && !isUserPaused && !isSystemReduced && !document.hidden) {
+          rafId = requestAnimationFrame(animate);
+        }
+      }
+
+      function stopAnimation() {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+
+      // 멈춤/재생 버튼 클릭 제어
+      toggleBtn.addEventListener('click', () => {
+        if (isSystemReduced && !isUserPaused) {
+          isSystemReduced = false;
+        }
+        isUserPaused = !isUserPaused;
+        updateUIState();
+
+        if (isUserPaused) {
+          stopAnimation();
+          resetTransform();
+        } else {
+          startAnimation();
+        }
+      });
+
+      // 탭 숨김/전환 시 애니메이션 자동 중지 및 복귀
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAnimation();
+        } else {
+          startAnimation();
+        }
+      });
+
+      // OS prefers-reduced-motion 변경 감지
+      reducedMotionQuery.addEventListener('change', (e) => {
+        isSystemReduced = e.matches;
+        updateUIState();
+        if (isSystemReduced) {
+          stopAnimation();
+          resetTransform();
+        } else {
+          startAnimation();
+        }
+      });
+
+      window.addEventListener('resize', updateUIState, { passive: true });
+
+      // 초기 상태 설정 및 실행
+      updateUIState();
+      if (isSystemReduced) {
+        resetTransform();
+      } else {
+        startAnimation();
+      }
+    })();
+  </script>
+</body>
+</html>
